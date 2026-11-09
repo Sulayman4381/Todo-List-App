@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Todo List App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="todo-container">
+
+        <div class="todo-header">
+            <span class="todo-icon">✓</span>
+            <h1>My Todo List</h1>
+            <p>Stay organized. Get things done.</p>
+        </div>
+
+        <!-- Add Task Form -->
+        <form id="addTaskForm">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What needs to be done?"
+                required
+                autocomplete="off"
+            >
+
+            <div class="task-options">
+
+                <select id="priorityInput">
+                    <option value="low">Low Priority</option>
+                    <option value="medium" selected>Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+
+                <input
+                    type="date"
+                    id="dueDateInput"
+                    aria-label="Task due date"
+                >
+
+            </div>
+
+            <button type="submit" class="add-btn">
+                + Add Task
+            </button>
+
+        </form>
+
+        <!-- Progress Section -->
+        <div class="progress-section">
+
+            <div class="progress-info">
+                <h2>Your Progress</h2>
+                <span id="progressPercentage">0%</span>
+            </div>
+
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+
+            <p id="progressText">0 of 0 tasks completed</p>
+
+        </div>
+
+        <!-- Task Heading -->
+        <div class="task-heading">
+            <h2>My Tasks</h2>
+            <span id="taskCount">0 tasks</span>
+        </div>
+
+        <!-- Filters -->
+        <div class="filter-buttons">
+
+            <button class="filter-btn active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter-btn" data-filter="active">
+                Active
+            </button>
+
+            <button class="filter-btn" data-filter="completed">
+                Completed
+            </button>
+
+        </div>
+
+        <!-- Task List -->
+        <ul id="taskList"></ul>
+
+        <button id="clearCompleted" class="clear-btn">
+            Clear Completed
+        </button>
+
+        <p class="footer-text">
+            Made with ❤️ | SulexDev!
+        </p>
+
+    </main>
+
+    <script src="todo.js"></script>
+</body>
+</html>
